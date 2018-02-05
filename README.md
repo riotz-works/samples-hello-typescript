@@ -73,10 +73,22 @@ TSC is checked at compile time, however TSLint can be checked with editor
 Because Claudia API(which we often use) Builder is an ES5-Style export.  
 If Claudia API Builder supports ES6-style or we use other products, set it to `true`.  
 
+- `no-magic-numbers` : *unset*  
+Because considered that it is not appropriate for coding and readability to constantize numerical values that are used only once.  
+It will be evaluated in reviews instead of Lint.  
+
 - `typedef` / `variable-declaration` : *unset*  
 Because the type definition of the function becomes redundant and the line breakage is forced, the readability drops.  
 Even without typing, we think that users of functions can understand types by type inference, so there is no problem.  
 However, if evils arise due to not performing type definition, this item will be set.  
+
+- `typeof-compare` : *unset*  
+Similar functions are supported by tsc, which is deprecated in tslint.  
+
+- `no-use-before-declare` : *unset*
+We think that the implementation of the main process should be placed at the beginning of the file.
+When this setting is enabled, the functions used by the main processing will be placed at the beginning of the file.
+Therefore, this setting is not used.
 
 
 ## Contribution
